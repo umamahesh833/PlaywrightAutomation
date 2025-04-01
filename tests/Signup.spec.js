@@ -156,4 +156,11 @@ test('Login test', async ({page})=>{
     })
 
 
+    test('Login test New for Branch', async ({page})=>{
+        // Navigating to website.
+        await page.goto("https://www.automationexercise.com/");
+        
+        })
+
+
 
