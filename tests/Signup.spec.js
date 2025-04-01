@@ -160,24 +160,6 @@ test('Login test', async ({page})=>{
         // Navigating to website.
         await page.goto("https://www.automationexercise.com/");
         
-        // Wait for the cookie consent button to be visible
-        const consentButton = page.locator(".fc-button-label").filter({ hasText: "Consent" }); // handling cookies consent
-        await consentButton.waitFor(); // waiting for element
-        await consentButton.click(); // clicking on consent
-        
-        // Clicking on Signup/Login link
-        await page.locator("text='Signup / Login'").click(); // click on signup from menu list.
-        await expect(page).toHaveURL("https://www.automationexercise.com/login"); // Assertion after clicking on signup.
-        
-        
-        //
-        await page.locator("input[data-qa='login-email']").fill(EmailAddress)
-        await page.locator("input[data-qa='login-password']").fill("Test123")
-        
-        
-         //Temp code for learning to wait the code
-         await page.waitForTimeout(3000)
-        
         })
 
 
