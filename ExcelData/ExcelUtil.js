@@ -10,7 +10,8 @@ let TestData = {}
 async function getExcelData(UserAccess){
 
     const WorkBook = new exceljs.Workbook();
-    await WorkBook.xlsx.readFile("C:/Users/umama/OneDrive/Desktop/new.xlsx")
+    //await WorkBook.xlsx.readFile("C:/Users/umama/OneDrive/Desktop/new.xlsx")
+    await WorkBook.xlsx.readFile('../ExcelData/new.xlsx')
     const Worksheet1 =await WorkBook.getWorksheet("Sheet1")
 
     let Rws = await Worksheet1.actualRowCount
@@ -44,7 +45,7 @@ return TestData;
 async function UpdateExcelData(Access, EmailAddress){
 
     const WorkBook = new exceljs.Workbook();
-    await WorkBook.xlsx.readFile("C:/Users/umama/OneDrive/Desktop/new.xlsx")
+    await WorkBook.xlsx.readFile('../ExcelData/new.xlsx')
     const Worksheet1 =await WorkBook.getWorksheet("Sheet1")
 
     let Rws = await Worksheet1.actualRowCount

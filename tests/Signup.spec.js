@@ -1,5 +1,5 @@
 const {test, expect} = require("@playwright/test")
-const ExcelUtil = require("C:/Playwright-Jan2025/PlaywrightAutomation/ExcelData/ExcelUtil.js")
+const ExcelUtil = require('../ExcelData/ExcelUtil')
 
 
 
