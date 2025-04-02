@@ -76,7 +76,7 @@ await expect(page).toHaveURL('https://www.automationexercise.com/signup'); // As
 
 // Checking whether Name and email address are prepopulated in signup
 await expect(name).toBeDisabled;
-await expect(name).toHaveValue('Sunitha');
+await expect(name).toHaveValue('Uma');
 await expect(name).toBeEditable;
 await expect(email).toBeDisabled;
 //await expect(email).toHaveValue("emailaddress");
@@ -146,7 +146,7 @@ test('Login test', async ({page})=>{
     
     
     //
-    await page.locator("input[data-qa='login-email']").fill(EmailAddress)
+    await page.locator("input[data-qa='login-email']").fill("EmailAddress@test.com")
     await page.locator("input[data-qa='login-password']").fill("Test123")
     
     
