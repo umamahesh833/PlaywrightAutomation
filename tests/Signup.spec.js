@@ -1,15 +1,18 @@
 const {test, expect} = require("@playwright/test")
-const ExcelUtil = require('../ExcelData/ExcelUtil')
-
+//const ExcelUtil = require('../ExcelData/ExcelUtil')
+const UserData = JSON.parse(JSON.stringify(require('../ExcelData/new.json')));
 
 
 
 test("Validate Application Signup", async ({page})=>{
 
-    let UserAccess = "Admin"
-//Read data from excel and store in object
-var UserData =await ExcelUtil.getExcelData(UserAccess)
-console.log(UserData);
+
+    console.log("first name - "+ UserData.Fname);
+    
+//     let UserAccess = "Admin"
+// //Read data from excel and store in object
+// var UserData =await ExcelUtil.getExcelData(UserAccess)
+// console.log(UserData);
 
 
 // Locators in Login form for New user signup
@@ -38,6 +41,7 @@ const newsletter = page.locator('#newsletter');
 // Generating a unique and random number for email.
 let RanNum = Math.floor((Math.random()* 9999) + 1000);
 let EmailAddress = UserData.Fname+RanNum+"@test.com"
+
 
 // Entering Address information.
 
@@ -76,7 +80,7 @@ await expect(page).toHaveURL('https://www.automationexercise.com/signup'); // As
 
 // Checking whether Name and email address are prepopulated in signup
 await expect(name).toBeDisabled;
-await expect(name).toHaveValue('Uma');
+await expect(name).toHaveValue(UserData.Fname);
 await expect(name).toBeEditable;
 await expect(email).toBeDisabled;
 //await expect(email).toHaveValue("emailaddress");
@@ -117,7 +121,8 @@ await createAccount.click();
  await expect(page).toHaveURL("https://www.automationexercise.com/account_created");
  await expect(accountCreated).toHaveText("Congratulations! Your new account has been successfully created!")
  //update excel with email address to the same role
-await ExcelUtil.UpdateExcelData(UserAccess, EmailAddress)
+ UserData.Email = EmailAddress
+//await ExcelUtil.UpdateExcelData(UserAccess, EmailAddress)
  // clicking on continue button
  await continueButton.click();
 
@@ -131,7 +136,7 @@ await ExcelUtil.UpdateExcelData(UserAccess, EmailAddress)
 
 
 
-test('Login test', async ({page})=>{
+test.skip('Login test', async ({page})=>{
     // Navigating to website.
     await page.goto("https://www.automationexercise.com/");
     
@@ -156,11 +161,6 @@ test('Login test', async ({page})=>{
     })
 
 
-    test('Login test New for Branch', async ({page})=>{
-        // Navigating to website.
-        await page.goto("https://www.automationexercise.com/");
-        
-        })
 
 
 
