@@ -9,9 +9,15 @@ constructor(page){
 }
 
 
-async LoginApp(){
+async LoginAppOld(){
     await this.loginEmail.type(TestData.UserName);
     await this.loginPassword.type(TestData.Password);
+    await this.loginButton.click();
+}
+
+async LoginApp(username, password){
+    await this.loginEmail.type(username);
+    await this.loginPassword.type(password);
     await this.loginButton.click();
 }
 
