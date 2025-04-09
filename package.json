@@ -2,7 +2,11 @@
   "name": "playwrightautomation",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "ParellelTest": "npx cucumber-js --format html:cucumber-report.htmt --parallel 2 --exit",
+    "LoginTag": "npx cucumber-js --tags `@Login` --exit",
+    "AllTests": "npx cucumber-js --format html:cucumber-report.htmt --exit"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

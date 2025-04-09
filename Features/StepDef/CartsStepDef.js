@@ -11,7 +11,7 @@ const {SignUpLoginPage} = require('../../PageObjects/SignUpLoginPage')
 Given('I launch the application',async function () {
     console.log("Step def for launching the application**************");
 
-    const browser =await playwright.chromium.launch({
+    const browser =await playwright.firefox.launch({
       headless:false
     })
     const context =await browser.newContext()

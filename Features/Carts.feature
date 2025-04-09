@@ -15,10 +15,5 @@ And I login to the application as "Bhavana8700@test.com" and password "Test123"
 Then product should be added to cart
 And Products price should be matching
 
-@Login
-Scenario: Verify login test
-Given I launch the application
-When I login to the application
-Then Home page should be seen
 
 
