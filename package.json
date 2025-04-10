@@ -2,12 +2,17 @@
   "name": "playwrightautomation",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "ParellelTest": "npx cucumber-js --format html:cucumber-report.htmt --parallel 2 --exit",
+    "LoginTag": "npx cucumber-js --tags `@Login` --exit",
+    "AllTests": "npx cucumber-js --format html:cucumber-report.htmt --exit"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
     "@playwright/test": "^1.50.1",
     "@types/node": "^22.13.5",
     "exceljs": "^4.4.0"
