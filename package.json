@@ -5,7 +5,9 @@
   "scripts": {
     "ParellelTest": "npx cucumber-js --format html:cucumber-report.htmt --parallel 2 --exit",
     "LoginTag": "npx cucumber-js --tags `@Login` --exit",
-    "AllTests": "npx cucumber-js --format html:cucumber-report.htmt --exit"
+    "AllTests": "npx cucumber-js --format html:cucumber-report.htmt --exit",
+    "PTCarts":"npx playwright test Carts.spec.js",
+    "AllTest":"npx playwright test"
   },
   "keywords": [],
   "author": "",
